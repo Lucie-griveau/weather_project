@@ -1,6 +1,11 @@
 <template>
   <div class="hello">
-    <City/>
+    <City 
+    :name="name"
+    :weather="weather"
+    :temperature="temperature"
+    :updatedAt="updatedAt"
+    ></City>
   </div>
 </template>
 
@@ -11,6 +16,14 @@ export default {
   name: 'HelloWorld',
   components: {
     City
+  },
+  data (){
+    return {
+      name: 'Grenoble', // nom de la ville
+      weather: 'Peu nuageux', // descriptif météo
+      temperature: 20.55, // température en °C
+      updatedAt: new Date() // date de dernière mise à jour
+    }
   }
 }
 </script>
